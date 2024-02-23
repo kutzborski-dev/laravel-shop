@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'home';
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/product/{productName}-{productId}', function($productName, $productId){
-    return $productName;
-})->name('product.details');
+Route::get('/product/{productName}-{productId}', [ProductController::class, 'show'])->name('product.details');
 
-Route::get('/{categoryPath}', function($categoryPath) {
-    return $categoryPath;
-})->where('categoryPath', '.*')->name('category.list');
+Route::get('/{categoryPath}', [CategoryController::class, 'show'])->where('categoryPath', '.*')->name('category.list');
 
 Route::get('/search', function(){
     return 'search';

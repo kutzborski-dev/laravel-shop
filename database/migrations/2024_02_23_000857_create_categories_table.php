@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id')->constrained('categories')->cascadeOnUpdate();
+            $table->foreignId('parent_id')->nullable()->constrained('categories')->cascadeOnUpdate();
             $table->text('name', 100);
             $table->text('slug', 255);
             $table->unsignedSmallInteger('sort_order')->nullable();

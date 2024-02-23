@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return 'home';
+})->name('home');
+
+Route::get('/product/{productName}-{productId}', function($productName, $productId){
+    return $productName;
+})->name('product.details');
+
+Route::get('/{categoryPath}', function($categoryPath) {
+    return $categoryPath;
+})->where('categoryPath', '.*')->name('category.list');
+
+Route::get('/search', function(){
+    return 'search';
+})->name('search');

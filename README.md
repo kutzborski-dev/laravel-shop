@@ -30,7 +30,7 @@
 
 **Migrations and relationship handling:** Foreign key relationships are handled in the migrations (e.g. `2024_02_23_004940_create_products_table.php` on line 16), cascading on update and setting to null on delete, in order to avoid possible unexpected errors creeping up. This, however, also means that any such product would no longer be displayed as part of any category until fixed. **In detail:** There are various ways to deal with this situation, such as restricting the deletion to certain conditions, or defaulting to another category, which may be better choices in a real application, where a category perhaps contains a ton of products. Different however, When a sub category that has further child sub categories is deleted, the child sub categories should move up in the hierarchy (via application logic) and become direct descendents of the parent of the sub category that was deleted.
 
-**Factories and Seeding:** The seeders try to keep things somewhat realistic without putting too much emphasis on this aspect, as it would create too much overhead for something as simple as dummy data. The database is populated with 
+**Factories and Seeding:** The seeders try to keep things somewhat realistic without putting too much emphasis on this aspect, as it would create too much overhead for something as simple as dummy data. The database is populated with a total of 305 categories (5 parents, 50 children, and 250 grand children), and each of those categories is populated with Products. A total of 1850 products are seeded into the database (20 per parent, 10 per child and 5 per grand child).
 
 <br/>
 

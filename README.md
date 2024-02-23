@@ -15,10 +15,10 @@
 5. Copy `.env.example` to `.env`
 6. Create app key: `./artisan key:generate` or `php artisan key:generate`
 8. Symlink the storage via `./artisan storage:link` or `php artisan storage:link`
-9. Migrate all tables by running `./artisan migrate` or `php artisan migrate` and allow it create the database
+9. Migrate all tables and seed the database by running `./artisan migrate --seed` or `php artisan migrate --seed` and allow it create the database, if it prompts
    * If for some reason allowing laravel to create the database doesn't work, check the .env file for the database name and create it manually
-9. Boot the Vite development server with `npm run dev`
-10. Serve Laravel using `./artisan serve` or `php artisan serve`
+10. Boot the Vite development server with `npm run dev`
+11. Serve Laravel using `./artisan serve` or `php artisan serve`
 
 ##
 ### Dev notes/choices
@@ -29,6 +29,8 @@
 **Design/Styling (UI/UX):** Tailwind[^2] is being used due to it's ease of setup[^3] and the sheer amount of designs out there, that are free to pick from, basically out-of-the-box. It's also highly customisable and makes implementing features like dark mode more straightforward.
 
 **Migrations and relationship handling:** Foreign key relationships are handled in the migrations (e.g. `2024_02_23_004940_create_products_table.php` on line 16), cascading on update and setting to null on delete, in order to avoid possible unexpected errors creeping up. This, however, also means that any such product would no longer be displayed as part of any category until fixed. **In detail:** There are various ways to deal with this situation, such as restricting the deletion to certain conditions, or defaulting to another category, which may be better choices in a real application, where a category perhaps contains a ton of products. Different however, When a sub category that has further child sub categories is deleted, the child sub categories should move up in the hierarchy (via application logic) and become direct descendents of the parent of the sub category that was deleted.
+
+**Factories and Seeding:** The seeders try to keep things somewhat realistic without putting too much emphasis on this aspect, as it would create too much overhead for something as simple as dummy data. The database is populated with 
 
 <br/>
 

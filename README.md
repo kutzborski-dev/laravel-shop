@@ -19,6 +19,7 @@
    * If for some reason allowing laravel to create the database doesn't work, check the .env file for the database name and create it manually
 10. Boot the Vite development server with `npm run dev`
 11. Serve Laravel using `./artisan serve` or `php artisan serve`
+12. Go to `localhost:8000` or `127.0.0.1:8000`
 
 ##
 ### Dev notes/choices

@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SearchController;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\CategoryController;
+use App\Http\Controllers\Product\HomeController;
+use App\Http\Controllers\Product\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +21,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/product/{productName}-{productId}', [ProductController::class, 'show'])->name('product.details');
 
-Route::get('/{categoryPath}', [CategoryController::class, 'show'])->where('categoryPath', '.*')->name('category.list');
-
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/{categoryPath}', [CategoryController::class, 'show'])->where('categoryPath', '.*')->name('category.list');

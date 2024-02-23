@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,4 @@ Route::get('/product/{productName}-{productId}', [ProductController::class, 'sho
 
 Route::get('/{categoryPath}', [CategoryController::class, 'show'])->where('categoryPath', '.*')->name('category.list');
 
-Route::get('/search', function(){
-    return 'search';
-})->name('search');
+Route::get('/search', [SearchController::class, 'search'])->name('search');

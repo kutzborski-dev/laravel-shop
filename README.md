@@ -12,12 +12,12 @@
 2. Clone the project: `git clone git@github.com:kutzborski-dev/sd-bed-test.git`
 3. Run `composer require` to setup the vendor folder
 4. Run `npm install` to install Tailwind[^2] and it's dependencies
-5. Copy `.env.example` and rename to `.env`
-5. Symlink the storage via `./artisan storage:link` or `php artisan storage:link`
-6. Migrate all tables by running `./artisan migrate` or `php artisan migrate` and allow it create the database
-⋅⋅* If for some reason allowing laravel to create the database doesn't work, check the .env file for the database name and create it manually
-6. Boot the Vite development server with `npm run dev`
-7. Serve Laravel using `./artisan serve` or `php artisan serve`
+5. Copy `.env.example` to `.env`
+6. Symlink the storage via `./artisan storage:link` or `php artisan storage:link`
+7. Migrate all tables by running `./artisan migrate` or `php artisan migrate` and allow it create the database
+   * If for some reason allowing laravel to create the database doesn't work, check the .env file for the database name and create it manually
+8. Boot the Vite development server with `npm run dev`
+9. Serve Laravel using `./artisan serve` or `php artisan serve`
 
 ##
 ### Dev notes/choices

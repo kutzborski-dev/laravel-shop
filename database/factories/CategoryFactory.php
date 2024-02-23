@@ -16,7 +16,7 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        $categoryName = fake()->words(rand(2, 3));
+        $categoryName = fake()->words(rand(2, 3), true);
 
         return [
             'name' => $categoryName,

@@ -23,7 +23,7 @@ class ProductFactory extends Factory
 
         return [
             'name' => implode(' ', $name),
-            'model' => 'm-'. fake()->text(rand(2, 4)) . fake()->randomNumber(rand(4, 6), true),
+            'model' => 'm-'. strtolower(fake()->swiftBicNumber()), // swiftBicNumber is used as it is the simplest way to generate a random string of 8-11 numbers and letters with FakerPHP
             'sku' => $firstLetters . fake()->randomNumber(rand(4, 6), true), // Create a somewhat realistic looking SKU
             'price' => fake()->randomFloat(2, 15, 200),
             'description' => fake()->paragraphs(4, true),

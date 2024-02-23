@@ -21,7 +21,7 @@ class ProductFactory extends Factory
             'model' => 'm-'. fake()->text(rand(2, 4)) . fake()->randomNumber(rand(4, 6), true),
             'sku' => fake()->text(rand(2, 4)) . fake()->randomNumber(rand(4, 6), true),
             'price' => fake()->randomFloat(2, 15, 200),
-            'description' => fake()->paragraphs(4),
+            'description' => fake()->paragraphs(4, true),
             'short_description' => fake()->paragraph(5),
             'is_active' => fake()->boolean()
         ];

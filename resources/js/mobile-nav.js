@@ -25,6 +25,7 @@ function initMobileNavHandler() {
         mobileNavCategories.forEach(item => {
             const target = item.getAttribute('data-target');
             const targetMenu = document.querySelectorAll(`.category-menu-item-submenu--mobile[data-panel="${target}"]`)[0];
+            console.log(targetMenu);
             const backBtn = document.querySelector(`#${target}-back-btn`);
 
             item.addEventListener('click', function(){

@@ -1,5 +1,5 @@
 <section class="bg-gray-100/35">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+    <div class="grid max-w-7xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 sm:px-8">
         <div class="mr-auto place-self-center lg:col-span-7">
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Lorem Ipsum Dolor Sit Amet</h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum odio massa, eget egestas sapien viverra in. Nunc nisl turpis, mattis ac mi non, iaculis euismod risus. Phasellus eget sapien ex. Suspendisse rhoncus quis neque at venenatis. In commodo justo felis, vel blandit neque blandit.</p>

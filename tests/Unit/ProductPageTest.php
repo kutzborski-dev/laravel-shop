@@ -16,7 +16,6 @@ class ProductPageTest extends TestCase
         $response = $this->get("/product/{$product->slug}-{$product->id}");
         $response->assertStatus(200);
 
-        $response->assertStatus(200);
         $response->assertSee(e($product->name));
     }
 }

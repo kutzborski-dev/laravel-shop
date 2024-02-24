@@ -19,7 +19,7 @@ class CategoryFactory extends Factory
         $categoryName = fake()->words(rand(2, 3), true);
 
         return [
-            'name' => $categoryName,
+            'name' => ucfirst($categoryName),
             'slug' => strtolower(str_ireplace(' ', '-', $categoryName)),
             'is_active' => fake()->boolean()
         ];

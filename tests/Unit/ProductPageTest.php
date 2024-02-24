@@ -9,6 +9,7 @@ class ProductPageTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test */
     public function the_page_is_reachable_and_has_data()
     {
         $product = \App\Models\Product::factory()->create();

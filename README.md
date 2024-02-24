@@ -29,9 +29,15 @@
 
 **Design/Styling (UI/UX):** Tailwind[^2] is being used due to it's ease of setup[^3] and the sheer amount of designs out there, that are free to pick from, basically out-of-the-box. It's also highly customisable and makes implementing features like dark mode more straightforward.
 
+**Sorting:** The composer package `kyslik/column-sortable` is utilized to greatly simplify the process of adding sortability to models. The resulting ease-of-use is more or less comparable to that of Laravel's Paginator for pagination.
+
 **Migrations and relationship handling:** Foreign key relationships are handled in the migrations (e.g. `2024_02_23_004940_create_products_table.php` on line 16), cascading on update and setting to null on delete, in order to avoid possible unexpected errors creeping up. This, however, also means that any such product would no longer be displayed as part of any category until fixed. **In detail:** There are various ways to deal with this situation, such as restricting the deletion to certain conditions, or defaulting to another category, which may be better choices in a real application, where a category perhaps contains a ton of products. Different however, When a sub category that has further child sub categories is deleted, the child sub categories should move up in the hierarchy (via application logic) and become direct descendents of the parent of the sub category that was deleted.
 
 **Factories and Seeding:** The seeders try to keep things somewhat realistic without putting too much emphasis on this aspect, as it would create too much overhead for something as simple as dummy data. The database is populated with a total of 305 categories (5 parents, 50 children, and 250 grand children), and each of those categories is populated with Products. A total of 1850 products are seeded into the database (20 per parent, 10 per child and 5 per grand child).
+
+**Data access and business logic abstraction:** Abstraction of the layers is achieved through the use of the Repository pattern and Service classes. While there are other methods out there to handle (or help with) abstraction and reusability (e.g. custom QueryBuilder classes, simple small Action classes or custom Casts), using the Repository pattern and Service classes itself could already be considered over-kill for this simple project. They're used here because the project is treated to be agile and ever-evolving with the future in mind, and to showcase an example for abstraction.
+
+**Improvements/Suggestions:** In a real world application the UI of a project like this is usually better done using a more front-end specialised framework, such as Vue.js, which comes with Laravel, or React, to have a seamless user experience when it comes navigation or other actions or interactivity.
 
 <br/>
 

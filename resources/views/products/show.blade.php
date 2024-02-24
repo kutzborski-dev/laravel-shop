@@ -4,10 +4,10 @@
     <section class="text-gray-700 body-font overflow-hidden bg-white">
         <div class="lg:w-[75%] w-full px-5 lg:py-24 py-12 mx-auto">
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
-            <img alt="ecommerce" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://placehold.co/750x850?text=Nulla+quam+ante+fringilla">
+            <img alt="ecommerce" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://placehold.co/750x850?text={{ $product->name }}">
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                 <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
-                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">Nulla quam ante fringilla</h1>
+                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ $product->name }}</h1>
                 <div class="flex mb-4">
                 <span class="flex items-center">
                     <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-gray-500" viewBox="0 0 24 24">
@@ -28,7 +28,7 @@
                     <span class="text-gray-600 ml-3">4 Reviews</span>
                 </span>
                 </div>
-                <p class="leading-relaxed">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque luctus nulla in rhoncus semper. Maecenas pretium erat dictum, venenatis est quis, eleifend diam. Proin gravida pellentesque ex eget volutpat. In vestibulum sit amet turpis sit amet laoreet. Integer eu arcu nisl. Nam est lacus, viverra quis lectus nec, pellentesque interdum lectus. Aliquam in leo velit. Nulla nec posuere lacus. Praesent non ex sed odio finibus placerat.</p>
+                <p class="leading-relaxed">{{ $product->description }}</p>
                 <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                 <div class="flex">
                     <span class="mr-3">Color</span>
@@ -54,7 +54,7 @@
                 </div>
                 </div>
                 <div class="flex">
-                <span class="title-font font-medium text-2xl text-gray-900">£58.00</span>
+                <span class="title-font font-medium text-2xl text-gray-900">£{{ $product->price }}</span>
                 <button class="flex ml-auto text-white bg-gray-700 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded">Add to cart</button>
                 <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">

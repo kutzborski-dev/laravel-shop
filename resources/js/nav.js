@@ -4,8 +4,6 @@ import { mobileWidth } from "./config";
 const navMenuItems = document.querySelectorAll('.category-menu-item-label a');
 const header = document.querySelector('#page-header');
 
-initNavHandler();
-
 function initNavHandler() {
     if(window.innerWidth > mobileWidth) {
         navMenuItems.forEach(item => {
@@ -13,22 +11,33 @@ function initNavHandler() {
             const targetMenu = document.querySelectorAll(`.category-menu-item-submenu[data-menu="${target}"]`)[0];
             
             item.addEventListener('mouseenter', function(){
-                targetMenu.classList.remove('hidden');
+                showMenu(targetMenu);
         
                 header.addEventListener('mouseleave', function(e){
                     if(!hasParent(this, targetMenu)) {
-                        targetMenu.classList.add('hidden');
+                        hideMenu(targetMenu);
                     }
                 });
         
                 targetMenu.addEventListener('mouseleave', function(e){
-                    this.classList.add('hidden');
+                    hideMenu(this);
                 });
             });
         });
     }
 }
 
+initNavHandler();
+
+const showMenu = (menu) => {
+    menu.classList.remove('hidden');
+}
+
+const hideMenu = (menu) => {
+    menu.classList.add('hidden');
+}
+
 window.addEventListener('resize', function(){
+    // Re-init on resize to make sure we disable this functionality for mobile to avoid weirdness
     initNavHandler();
 });

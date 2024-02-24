@@ -3,6 +3,18 @@
     @include('partials.nav.mobile-menu')
 
   <header id="page-header" class="relative bg-white border-b border-gray-200">
+    <div id="search-bar" class="border border-gray-200 absolute left-[50%] -ml-[25%] top-full mt-0 max-w-7xl w-full bg-white flex items-center">
+      <div class="mx-4">
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+        </svg>
+      </div>
+      <div class="w-full">
+        <form action="{{ route('search') }}#product-list" method="GET">
+          <input class="py-3 pr-3 w-full" type="text" name="q" placeholder="Search products" autocomplete="off" />
+        </form>
+      </div>
+    </div>
     <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div>
         <div class="flex h-16 items-center">

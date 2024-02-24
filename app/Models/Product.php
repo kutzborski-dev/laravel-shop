@@ -7,14 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 use App\Models\Scopes\ActiveScope;
 use App\Models\Scopes\SortableScope;
+use App\Traits\Searchable;
 
 class Product extends Model
 {
-    use HasFactory, Sortable;
+    use HasFactory, Sortable, Searchable;
 
     public $sortable = [
         'name',
         'price'
+    ];
+
+    public $searchable = [
+        'name',
+        'price',
+        'description',
+        'short_description',
+        'sku',
+        'model'
     ];
 
     protected static function booted() {

@@ -1,21 +1,21 @@
 @extends("layouts.show")
 
 @section("content")
-    <div class="container max-w-7xl mx-auto px-4 py-14">
-        <div class="category-container mb-12">
-            <div class="category-header flex justify-between items-end border-b border-gray-250 py-2">
-                <div class="category-name">
-                    <h4 class="font-medium text-xl text-gray-700">Main category 1</h4>
-                </div>
-
-                <div>
-                    <a href="#" class="text-gray-700 hover:text-gray-500 flex items-center gap-2"><span>Browse all</span><svg class="h-3 w-3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12 3l10.001 9.496-10 9.501-.689-.726L20 12.996H2v-1h18l-8.688-8.271z"></path></svg></a>
-                </div>
+    <div class="py-14 container max-w-7xl px-4 mx-auto">
+        @if(count($subCategories))
+            <h3 class="text-xl font-medium mb-4 border-b border-gray-200 pb-2">Browse other categories:</h3>
+            <div id="subcategories" class="grid grid-cols-5 gap-3 mb-20">
+                @foreach($subCategories as $subCategory)
+                    <a href="{{ route('category.list', ['categoryPath' => $categoryPath .'/'. $subCategory->slug]) }}" class="bg-gray-200 p-5 text-center">
+                        <h4 class="text-lg">{{ ucfirst($subCategory->name) }}</h4>
+                    </a>
+                @endforeach
             </div>
+        @endif
 
-            <div class="category-products">
-                @include('products.partials.product-list')
-            </div>
-        </div>
+        @if(count($products))
+            <h1 class="text-2xl font-medium">Category: {{ ucfirst($category->name) }}</h1>
+            @include('products.partials.product-list')
+        @endif
     </div>
 @endsection

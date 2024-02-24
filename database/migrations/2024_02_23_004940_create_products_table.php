@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->nullable()->constrained('categories')->cascadeOnUpdate()->nullOnDelete();
             $table->text('name', 100);
+            $table->text('slug', 255);
             $table->text('model', 100);
             $table->text('sku', 50);
             $table->float('price', places: 2);

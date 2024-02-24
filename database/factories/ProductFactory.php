@@ -22,7 +22,8 @@ class ProductFactory extends Factory
         $firstLetters = implode('', array_map(fn($part) => $part[0], $name));
 
         return [
-            'name' => implode(' ', $name),
+            'name' => ucfirst(implode(' ', $name)),
+            'slug' => strtolower(implode('-', $name)),
             'model' => 'm-'. strtolower(fake()->swiftBicNumber()), // swiftBicNumber is used as it is the simplest way to generate a random string of 8-11 numbers and letters with FakerPHP
             'sku' => $firstLetters . fake()->randomNumber(rand(4, 6), true), // Create a somewhat realistic looking SKU
             'price' => fake()->randomFloat(2, 15, 200),

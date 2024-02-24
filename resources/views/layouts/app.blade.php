@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
-<body>
+@include('partials.page-header')
+    @include('partials.hero')
     
-</body>
-</html>
+    <main class="py-16">
+        <div class="container mx-auto max-w-7xl px-4">
+            @yield('content')
+        </div>
+    </main>
+    
+    @include('partials.footer')
+@include('partials.page-footer')

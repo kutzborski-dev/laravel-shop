@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\CategoryController;
+use App\Http\Controllers\Product\SearchController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/product/{productSlug}-{productId}', [ProductController::class, 'show'])->where('productSlug', '.*')->name('product.details');
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/{categoryPath}', [CategoryController::class, 'show'])->where('categoryPath', '.*')->name('category.list');

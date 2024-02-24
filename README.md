@@ -39,7 +39,7 @@
 
 **Improvements/Suggestions:** In a real world application the UI of a project like this is usually better done using a more front-end specialised framework, such as Vue.js, which comes with Laravel, or React, to have a seamless user experience when it comes navigation or other actions or interactivity.
 
-*** Note:
+### Note
 Should there appear too few products or categories due to the seeder applying is_active as a random boolean and should it get in the way of testing/reviewing, either re-run the seeder or remove the global `ActiveScope` from the `Product` and `Category` models. The main reason why it was added is so that every time the migrations are refreshed, it's an entirely new run with new data, where one can instantly tell that it is indeed a new set of data.
 
 <br/>

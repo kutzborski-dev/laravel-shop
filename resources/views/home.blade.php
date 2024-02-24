@@ -4,7 +4,7 @@
     <!-- Offer alert -->
     <div id="alert-additional-content-1" class="mx-auto max-w-6xl p-4 mb-12 rounded-lg bg-gray-100" role="alert">
         <div class="flex items-center justify-center text-center">
-            <h3 class="text-3xl font-bold">Members get 20% off Subcategory1 and Subcategory2</h3>
+            <h3 class="text-3xl font-bold">Members get 20% off</h3>
         </div>
         
         <div class="mt-2 mb-8 text-sm text-center">

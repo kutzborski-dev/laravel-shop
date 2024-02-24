@@ -17,7 +17,8 @@ class CategoryController extends Controller
     public function show(CategoryRequest $request)
     {
         $categoryPath = $request->categoryPath;
-        $categorySlug = str_contains('/', $categoryPath) ? end(explode('/', $categoryPath)) : $categoryPath;
+        $categorySlug = explode('/', $categoryPath);
+        $categorySlug = end($categorySlug);
 
         $category = $this->categoryRepository->findBySlug($categorySlug);
 
@@ -26,6 +27,6 @@ class CategoryController extends Controller
         $products = $this->categoryRepository->getNestedProducts($category);
         $subCategories = $this->categoryRepository->getSubCategories($category);
 
-        return view('products.category', ['products' => $products]);
+        return view('products.category', ['categoryPath' => $categoryPath, 'category' => $category, 'subCategories' => $subCategories, 'products' => $products]);
     }
 }

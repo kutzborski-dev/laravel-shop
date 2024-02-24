@@ -1,6 +1,7 @@
 import { hasParent } from "./utils";
 import { mobileWidth } from "./config";
 
+const navMenus = document.querySelectorAll('.category-menu-item-submenu');
 const navMenuItems = document.querySelectorAll('.category-menu-item-label a');
 const header = document.querySelector('#page-header');
 
@@ -11,6 +12,10 @@ function initNavHandler() {
             const targetMenu = document.querySelectorAll(`.category-menu-item-submenu[data-menu="${target}"]`)[0];
             
             item.addEventListener('mouseenter', function(){
+                navMenus.forEach(menu => {
+                    hideMenu(menu);
+                });
+
                 showMenu(targetMenu);
         
                 header.addEventListener('mouseleave', function(e){

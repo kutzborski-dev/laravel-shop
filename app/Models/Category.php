@@ -20,4 +20,8 @@ class Category extends Model
     public function parentCategory() {
         return $this->belongsTo(Category::class, 'parent_id');
     }
+
+    public function allSubCategories() {
+        return $this->subCategories()->with('allSubCategories');
+    }
 }

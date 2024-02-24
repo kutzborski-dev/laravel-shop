@@ -34,6 +34,10 @@ class CategoryRepository implements CategoryRepositoryInterface {
         return $category->subCategories;
     }
 
+    public function getAncestors() {
+        return Category::whereNull('parent_id')->get();
+    }
+
     public function getSubCategories($category) {
         if(is_int($category)) {
             return Category::find($category)->subCategories;

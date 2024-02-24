@@ -10,4 +10,6 @@ interface CategoryRepositoryInterface {
     public function getProducts($category);
 
     public function getSubCategories($category);
+
+    public function getAncestors();
 }

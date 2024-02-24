@@ -16,18 +16,18 @@ class CategoryPageTest extends TestCase
     {
         $category = Category::factory()->
             has(Product::factory(1))->
-            has(Category::factory(1))->create();
+            has(Category::factory(1), 'subCategories')->create();
 
         $response = $this->get("/{$category->slug}");
         $response->assertStatus(200);
 
         $response->assertSee(e($category->name));
         
-        $category->subCategories->each(function($subCategory){
+        $category->subCategories->each(function($subCategory) use ($response){
             $response->assertSee(e($subCategory->name));
         });
 
-        $category->products->each(function($product){
+        $category->products->each(function($product) use ($response){
             $response->assertSee(e($product->name));
         });
     }

@@ -15,7 +15,8 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
+        $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
     }
 
     /**
@@ -23,7 +24,6 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
-        $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
+        
     }
 }

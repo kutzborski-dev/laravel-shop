@@ -2,7 +2,7 @@
 
 @section("content")
     <section class="text-gray-700 body-font overflow-hidden bg-white">
-        <div class="w-[75%] px-5 py-24 mx-auto">
+        <div class="lg:w-[75%] w-full px-5 lg:py-24 py-12 mx-auto">
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
             <img alt="ecommerce" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://placehold.co/750x850?text=Nulla+quam+ante+fringilla">
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">

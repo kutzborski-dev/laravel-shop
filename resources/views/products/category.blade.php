@@ -7,14 +7,14 @@
             <div id="subcategories" class="grid grid-cols-5 gap-3 mb-20">
                 @foreach($subCategories as $subCategory)
                     <a href="{{ route('category.list', ['categoryPath' => $categoryPath .'/'. $subCategory->slug]) }}" class="bg-gray-200 p-5 text-center">
-                        <h4 class="text-lg">{{ ucfirst($subCategory->name) }}</h4>
+                        <h4 class="text-lg">{{ $subCategory->name }}</h4>
                     </a>
                 @endforeach
             </div>
         @endif
 
         @if(count($products))
-            <h1 class="text-2xl font-medium">Category: {{ ucfirst($category->name) }}</h1>
+            <h1 class="text-2xl font-medium">Category: {{ $category->name }}</h1>
             @include('products.partials.product-list')
         @endif
     </div>

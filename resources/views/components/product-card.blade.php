@@ -1,7 +1,7 @@
 <div>
     <div class="group my-5 flex w-full max-w-xs flex-col overflow-hidden bg-white">
-        <a class="relative flex h-80 w-72 overflow-hidden" href="#">
-            <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://placehold.co/500x750?text=Purple+Linen+Blend+Blazer" alt="Product image" />
+        <a class="relative flex h-72 w-full overflow-hidden" href="{{ route('product.details', ['productSlug' => $slug, 'productId' => $id]) }}">
+            <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://placehold.co/500x750?text={{ $name }}" alt="Product image" />
             
             <div class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
                 <button class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-600">
@@ -18,11 +18,11 @@
         </a>
         <div class="mt-4">
             <a href="#">
-            <h5 class="text-center tracking-tight text-gray-500">Piped Linen Blend Blazer</h5>
+            <h5 class="text-center tracking-tight text-gray-500">{{ $name }}</h5>
             </a>
             <div class="flex justify-center">
             <p>
-                <span class="text-sm font-bold text-gray-900">£179</span>
+                <span class="text-sm font-bold text-gray-900">£{{ $price }}</span>
             </p>
             </div>
         </div>

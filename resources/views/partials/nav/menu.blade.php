@@ -15,8 +15,8 @@
               <div class="row-start-1 grid grid-cols-5 gap-x-8 gap-y-10 text-sm">
                 <!-- Column for each main category -->
                 <div>
-                  <p id="Clothing-heading" class="font-medium text-gray-900 text-base">Sub category</p>
-                  <ul role="list" aria-labelledby="Clothing-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+                  <a href="#" id="sub-category-heading" class="font-medium text-gray-900 text-base hover:text-gray-600">Sub category</a>
+                  <ul role="list" aria-labelledby="sub-category-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
                     <li class="flex">
                       <a href="#" class="hover:text-gray-500/90">Tops</a>
                     </li>
@@ -178,7 +178,7 @@
             </div>
 
             <div class="bg-gray-100/40 hover:bg-gray-100/80">
-              <a class="block px-4 py-2.5 text-base text-center" href="#">Browse all Category's</a>
+              <a class="block px-4 py-2.5 text-base text-center" href="#">Browse all Main category's</a>
             </div>
           </div>
         </div>

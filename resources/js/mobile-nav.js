@@ -8,20 +8,23 @@ const mobileMenuClose = document.querySelector('#mobile-menu-close');
 
 const mobileNavCategories = document.querySelectorAll('.category-menu-item-label--mobile button');
 
+const show = (menu) => menu.classList.remove('hidden');
+const hide = (menu) => menu.classList.add('hidden');
+
 initMobileNavHandler();
 
 function initMobileNavHandler() {
-    mobileMenuTrigger.addEventListener('click', function(){
-        show(mobileMenu);
-        show(mobileMenuBgOverlay);
-    });
-
-    mobileMenuClose.addEventListener('click', function(){
-        hide(mobileMenu);
-        hide(mobileMenuBgOverlay);
-    });
-
     if(window.innerWidth <= mobileWidth) {
+        mobileMenuTrigger.addEventListener('click', function(){
+            show(mobileMenu);
+            show(mobileMenuBgOverlay);
+        });
+    
+        mobileMenuClose.addEventListener('click', function(){
+            hide(mobileMenu);
+            hide(mobileMenuBgOverlay);
+        });
+
         mobileNavCategories.forEach(item => {
             const target = item.getAttribute('data-target');
             const targetMenu = document.querySelectorAll(`.category-menu-item-submenu--mobile[data-panel="${target}"]`)[0];
@@ -50,11 +53,3 @@ function initMobileNavHandler() {
 window.addEventListener('resize', function(){
     initMobileNavHandler();
 });
-
-const show = (menu) => {
-    menu.classList.remove('hidden');
-}
-
-const hide = (menu) => {
-    menu.classList.add('hidden');
-}

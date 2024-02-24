@@ -1,4 +1,4 @@
-<div>
+<div class="flex justify-center">
     <div class="group my-5 flex w-full max-w-xs flex-col overflow-hidden bg-white">
         <a class="relative flex h-72 w-full overflow-hidden" href="{{ route('product.details', ['productSlug' => $slug, 'productId' => $id]) }}">
             <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://placehold.co/500x750?text={{ $name }}" alt="Product image" />

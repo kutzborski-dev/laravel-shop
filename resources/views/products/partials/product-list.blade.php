@@ -1,4 +1,4 @@
-<div class="product-list grid grid-cols-5 gap-x-8 flex-wrap justify-center">
+<div class="product-list grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-8">
     @foreach($products as $product)
         <x-productcard id="{{ $product->id }}" name="{{ $product->name }}" price="{{ $product->price }}" slug="{{ $product->slug }}" />
     @endforeach

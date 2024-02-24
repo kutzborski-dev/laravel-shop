@@ -7,7 +7,7 @@
       <div>
         <div class="flex h-16 items-center">
           <!-- Mobile menu toggle -->
-          <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
+          <button id="mobile-menu-trigger" type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -29,7 +29,7 @@
           <!-- Icon links/buttons -->
           <div class="ml-auto flex items-center">
             <!-- Search -->
-            <div class="flex lg:ml-6 lg:mr-1">
+            <div class="flex lg:ml-6 lg:mr-1 mr-2">
               <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
                 <span class="sr-only">Search</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">

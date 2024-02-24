@@ -17,7 +17,7 @@
 
           <!-- Logo/title -->
           <div class="ml-4 flex lg:ml-0">
-            <a href="#">
+            <a href="{{ route('home') }}">
               <span class="sr-only">Shop name</span>
               <h2 class="text-2xl">Shop</h2>
             </a>

@@ -24,4 +24,8 @@ class Category extends Model
     public function allSubCategories() {
         return $this->subCategories()->with('allSubCategories');
     }
+
+    public function allParentCategories() {
+        return $this->parentCategory()->with('allParentCategories');
+    }
 }

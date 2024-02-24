@@ -4,10 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Scopes\ActiveScope;
 
 class Category extends Model
 {
     use HasFactory;
+
+    protected static function booted() {
+        static::addGlobalScope(new ActiveScope);
+    }
 
     public function products() {
         return $this->hasMany(Product::class);

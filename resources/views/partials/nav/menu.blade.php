@@ -1,4 +1,4 @@
-<div class="hidden lg:ml-8 lg:block lg:self-stretch">
+<div class="hidden lg:ml-8 lg:block lg:self-stretch z-10">
   <div class="flex h-full space-x-8">
     <!-- Menu link for main categories -->
     <div class="flex category-menu-item">

@@ -19,7 +19,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/product/{productName}-{productId}', [ProductController::class, 'show'])->name('product.details');
+Route::get('/product/{productSlug}-{productId}', [ProductController::class, 'show'])->where('productSlug', '.*')->name('product.details');
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 

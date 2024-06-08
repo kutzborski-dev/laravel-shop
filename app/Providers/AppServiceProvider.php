@@ -23,21 +23,25 @@ class AppServiceProvider extends ServiceProvider
     {
         // Definitely not the cleanest of solutions, but will do the job
         // Would normally be done using Recursion on the Model and any additional filtering via a Service class
-        $ancestorCategories = $categoryRepository->getAncestors();
-        $mainSubCategories = [];
-        $subCategories = [];
-        foreach($ancestorCategories as $ancestorCategory) {
-            if(!isset($mainSubCategories[$ancestorCategory->id])) $mainSubCategories[$ancestorCategory->id] = [];
-            $mainSubCategories[$ancestorCategory->id] = [...$mainSubCategories[$ancestorCategory->id], ...$categoryRepository->getSubCategories($ancestorCategory)];
-            
-            foreach($mainSubCategories[$ancestorCategory->id] as $mainSubCategory) {
-                if(!isset($subCategories[$mainSubCategory->id])) $subCategories[$mainSubCategory->id] = [];
-                $subCategories[$mainSubCategory->id] = [...$subCategories[$mainSubCategory->id], ...$categoryRepository->getSubCategories($mainSubCategory)];
+        try {
+            $ancestorCategories = $categoryRepository->getAncestors();
+            $mainSubCategories = [];
+            $subCategories = [];
+            foreach($ancestorCategories as $ancestorCategory) {
+                if(!isset($mainSubCategories[$ancestorCategory->id])) $mainSubCategories[$ancestorCategory->id] = [];
+                $mainSubCategories[$ancestorCategory->id] = [...$mainSubCategories[$ancestorCategory->id], ...$categoryRepository->getSubCategories($ancestorCategory)];
+                
+                foreach($mainSubCategories[$ancestorCategory->id] as $mainSubCategory) {
+                    if(!isset($subCategories[$mainSubCategory->id])) $subCategories[$mainSubCategory->id] = [];
+                    $subCategories[$mainSubCategory->id] = [...$subCategories[$mainSubCategory->id], ...$categoryRepository->getSubCategories($mainSubCategory)];
+                }
             }
+    
+            View::share('navMainCategories', $ancestorCategories);
+            View::share('navMainSubCategories', $mainSubCategories);
+            View::share('navSubCategories', $subCategories);
+        } catch (\Exception $e) {
+            //
         }
-
-        View::share('navMainCategories', $ancestorCategories);
-        View::share('navMainSubCategories', $mainSubCategories);
-        View::share('navSubCategories', $subCategories);
     }
 }

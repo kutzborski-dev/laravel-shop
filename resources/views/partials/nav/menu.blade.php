@@ -8,9 +8,9 @@
         </div>
         <div data-menu="{{ $mainCategory->slug }}-category" class="category-menu-item-submenu hidden absolute inset-x-0 top-full text-sm text-gray-500 border-t border-gray-200">
           <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-          <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
+          <!-- <div class="absolute inset-0 top-1/2 bg-white/80 shadow" aria-hidden="true"></div> -->
 
-          <div class="relative bg-white">
+          <div class="relative bg-white/85 backdrop-blur-xl">
             <div class="mx-auto max-w-7xl px-8">
               <div class="pb-9 pt-7">
                 <div class="row-start-1 grid grid-cols-5 gap-x-8 gap-y-10 text-sm">

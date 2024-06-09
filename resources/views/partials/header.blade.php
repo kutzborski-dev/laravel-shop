@@ -1,8 +1,8 @@
-<div class="bg-white">
+<div class="bg-white mb-16">
     <!-- Mobile menu -->
     @include('partials.nav.mobile-menu')
 
-  <header id="page-header" class="relative bg-white border-b border-gray-200">
+  <header id="page-header" class="fixed top-0 left-0 w-full z-10 bg-white border-b border-gray-200">
     <div id="search-bar" class="border border-gray-200 absolute left-[50%] -ml-[25%] top-full mt-0 max-w-7xl w-full bg-white flex items-center shadow-sm hidden">
       <div class="mx-4">
         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

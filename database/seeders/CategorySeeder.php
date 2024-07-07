@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
 {
@@ -18,15 +18,10 @@ class CategorySeeder extends Seeder
         $categoryName = str_ireplace('-', ' ', $slug);
 
         if(str_contains($categoryName, ' and ')) {
+            $categoryName = str_ireplace(' and ', ' & ', $categoryName);
+
             // Capitalise each part of the category name string before and after the 'and' stopword
-            $categoryTempParts = explode(' and ', $categoryName);
-
-            foreach($categoryTempParts as $i => &$categoryTempPart) {
-                $categoryTempPart = ucfirst($categoryTempPart);
-            }
-
-            // Join the capitalised parts back together
-            $categoryName = implode(' & ', $categoryTempParts);
+            $categoryName = Str::title($categoryName);
         } else {
             $categoryName = ucfirst($categoryName);
         }

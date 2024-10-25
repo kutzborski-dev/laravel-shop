@@ -1,4 +1,4 @@
-# Scaffold Digital Code Challenge
+# Interview Code Challenge
 
 ### Development Environment
 - Windows 10 (10.0.19045 Build 19045)
